@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Blog-Scope
 
-## Getting Started
+## Overview
 
-First, run the development server:
+Blog-Scope is a simple blog viewer application built with Next.js. This project demonstrates the use of routing, server and client components, dynamic routes, authentication, and data fetching. The application allows users to view a list of blog posts, navigate to detailed pages for each post, and access a protected profile page.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Next.js**: Framework for building the application.
+- **Axios**: For handling API requests.
+- **Tailwind CSS**: For responsive and clean styling.
+- **Kinde Auth**: For authentication and protected routes.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- **Home Page**: Displays a list of blog posts fetched from a mock API, with links to detailed pages.
+- **Dynamic Routes**: Each blog post has its own unique page.
+- **Protected Profile Page**: Accessible only to authenticated users. Redirects unauthenticated users to the login page.
+- **Header Navigation**: Includes links to the Home and Profile pages, with dynamic Login/Logout buttons based on authentication status.
+- **Responsive Design**: Styled with Tailwind CSS to ensure a clean and adaptable layout.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Live Site Link
 
-## Deploy on Vercel
+[Visit Blog-Scope](https://blog-scope-iota.vercel.app)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Installation
+
+Follow these steps to run the project locally:
+
+1. **Clone the Repository**:
+
+   ```bash
+   git clone https://github.com/MehediBytes/blog-scope
+   cd blog-scope
+   ```
+
+2. **Install Dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the Development Server**:
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Visit the Application**: Open your browser and navigate to `http://localhost:3000`.
+
+
+---
+
+## Key Components
+
+### Home Page
+
+- Fetches and displays a list of blog post titles using `axios` from the mock API `https://jsonplaceholder.typicode.com/posts`.
+- Each post title links to a dynamic route for detailed blog content.
+
+### Blog Details Page
+
+- Fetches detailed blog post information based on the dynamic `id` in the URL using the API `https://jsonplaceholder.typicode.com/posts/[id]`.
+- Displays the title and content of the blog post.
+
+### Profile Page
+
+- A static route (`/profile`) that displays a message like "Welcome to your profile!".
+- Protected by Kinde Auth, redirecting unauthenticated users to the login page.
+
+### Navigation
+
+- Header includes links to Home and Profile pages.
+- Displays "Login" or "Logout" buttons based on the user's authentication status.
+
+---
+
+## API Endpoints
+
+- **GET** `https://jsonplaceholder.typicode.com/posts`: Fetch all blog posts.
+- **GET** `https://jsonplaceholder.typicode.com/posts/[id]`: Fetch a specific post by its ID.
+
+---
+
+## Authentication
+
+- Kinde Auth is used to manage authentication.
+- Unauthenticated users are redirected to the login page when attempting to access the profile page.
+
+---
+
+## Contribution
+
+Feel free to fork the repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
+
+---
+
