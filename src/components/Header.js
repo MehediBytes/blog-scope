@@ -13,7 +13,7 @@ export default function Header() {
             <nav className="container mx-auto text-white flex justify-between items-center p-4">
                 {/* Mobile Toolbar and logo*/}
                 <div className="flex items-center space-x-2">
-                    <div className="lg:hidden">
+                    <div className="md:hidden">
                         <button
                             onClick={() => setMenuOpen(!menuOpen)}
                             className="text-white text-xl focus:outline-none"
