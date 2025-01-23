@@ -22,11 +22,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-purple-100`}
       >
         <KindeProviderWrapper>
           <Header />
-          <main>{children}</main>
+          <main className="min-h-screen mt-24 mb-5">{children}</main>
         </KindeProviderWrapper>
       </body>
     </html>
