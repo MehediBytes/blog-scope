@@ -8,6 +8,13 @@ async function fetchPosts() {
 
 export default async function HomePage() {
   const posts = await fetchPosts();
+  if (!posts) {
+    return (
+      <div className="flex items-center justify-center">
+        <div className="spinner-border animate-spin inline-block w-12 h-12 border-4 rounded-full border-purple-500 border-t-transparent"></div>
+      </div>
+    );
+  }
 
   return (
     <section className="max-w-7xl mx-auto px-4">
